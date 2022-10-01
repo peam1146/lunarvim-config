@@ -19,6 +19,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
 vim.cmd("nmap <S-l> :bn<CR>")
 vim.cmd("nmap <S-h> :bp<CR>")
+vim.cmd("nmap <F1> :Telescope find_files<CR>")
 -- vim.cmd("setlocal spell! spelllang=en")
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
@@ -94,6 +95,10 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.dap.active = true
+lvim.builtin.terminal.direction = 'horizontal'
+lvim.builtin.terminal.size = 10
+lvim.transparent_window = true
 
 local components = require "lvim.core.lualine.components"
 lvim.builtin.lualine.options = {
@@ -445,7 +450,7 @@ lvim.plugins = {
         project = {},
       })
     end,
-  }
+  },
 }
 lvim.builtin.treesitter.rainbow.enable = true
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

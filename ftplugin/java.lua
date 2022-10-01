@@ -49,12 +49,13 @@ JAVA_DAP_ACTIVE = true
 local bundles = {}
 
 if JAVA_DAP_ACTIVE then
-  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/lvim/java/vscode-java-test/server/*.jar"), "\n"))
   vim.list_extend(
     bundles,
     vim.split(
       vim.fn.glob(
-        home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+        home ..
+        "/.config/lvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
       ),
       "\n"
     )
@@ -197,6 +198,15 @@ local config = {
     bundles = bundles,
   },
 }
+
+config['on_attach'] = function(client, bufnr)
+  -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+  -- you make during a debug session immediately.
+  -- Remove the option if you do not want that.
+  -- You can use the `JdtHotcodeReplace` command to trigger it manually
+  require('jdtls.dap').setup_dap_main_class_configs()
+  require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+end
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
