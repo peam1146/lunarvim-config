@@ -4,5 +4,6 @@
   "typescript": "deno run",
   "rust": "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
   "go": "go run $file",
-  "cpp": "cd $dir && g++-12 -O2 -o $fileNameWithoutExt $fileName && ./$fileNameWithoutExt"
+  "cpp": "cd $dir && g++-12 -O2 -o $fileNameWithoutExt $fileName && ./$fileNameWithoutExt",
+  "lua": "cd $dir && lua $fileName"
 }
