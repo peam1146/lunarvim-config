@@ -1,8 +1,8 @@
 -- general
 lvim.log.level = "warn"
+vim.opt.relativenumber = true
 lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
-lvim.builtin.notify.active = true
 
 require('user.map')
 require('user.terminal')

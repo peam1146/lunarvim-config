@@ -5,6 +5,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":bn<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":bp<cr>"
 lvim.keys.normal_mode["<F1>"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<S-k>"] = ":lua vim.lsp.buf.hover()<cr>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -14,6 +15,7 @@ lvim.keys.normal_mode["<F1>"] = ":Telescope find_files<cr>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["`"] = { "<cmd>ToggleTerm<CR>", "Terminal" }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },

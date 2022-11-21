@@ -1,6 +1,21 @@
 -- Additional Plugins
 lvim.plugins = {
-  -- "github/copilot.vim",
+  "nvim-lua/plenary.nvim",
+  {
+    'akinsho/flutter-tools.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('flutter-tools').setup {
+        widget_guides = {
+          enabled = true,
+        },
+      }
+    end
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
   { "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
     config = function()
