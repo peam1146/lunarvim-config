@@ -2,7 +2,7 @@
 lvim.plugins = {
 	{
 		"akinsho/flutter-tools.nvim",
-		requires = "nvim-lua/plenary.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("flutter-tools").setup({
 				widget_guides = {
@@ -22,9 +22,6 @@ lvim.plugins = {
 			vim.defer_fn(function()
 				require("copilot").setup({
 					plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-					filetypes = {
-						cpp = false,
-					},
 				})
 			end, 100)
 		end,
@@ -58,12 +55,6 @@ lvim.plugins = {
 	},
 	{
 		"p00f/nvim-ts-rainbow",
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
 	},
 	{
 		"f-person/git-blame.nvim",
@@ -129,7 +120,7 @@ lvim.plugins = {
 	},
 	{
 		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
+		build = "cd app && npm install",
 		ft = "markdown",
 		config = function()
 			vim.g.mkdp_auto_start = 1
@@ -144,7 +135,7 @@ lvim.plugins = {
 	},
 	{
 		"CRAG666/code_runner.nvim",
-		requires = "nvim-lua/plenary.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("code_runner").setup({
 				focus = false,
@@ -157,6 +148,12 @@ lvim.plugins = {
 				project_path = vim.fn.expand("~/.config/lvim/code_runner/project_manager.json"),
 				project = {},
 			})
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
 		end,
 	},
 	{
@@ -195,8 +192,8 @@ lvim.plugins = {
 	"mxsdev/nvim-dap-vscode-js",
 	{
 		"saecki/crates.nvim",
-		tag = "v0.3.0",
-		requires = { "nvim-lua/plenary.nvim" },
+		version = "v0.3.0",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
 				null_ls = {
@@ -209,11 +206,10 @@ lvim.plugins = {
 	"j-hui/fidget.nvim",
 	{
 		"0x100101/lab.nvim",
-		run = "cd js && npm ci",
+		build = "cd js && npm ci",
 	},
 	"monaqa/dial.nvim",
 	"mfussenegger/nvim-jdtls",
 	"folke/zen-mode.nvim",
-	"NvChad/nvim-colorizer.lua",
 	"lvimuser/lsp-inlayhints.nvim",
 }
