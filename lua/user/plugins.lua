@@ -1,6 +1,17 @@
 -- Additional Plugins
 lvim.plugins = {
 	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	},
+	{
 		"akinsho/flutter-tools.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
@@ -53,9 +64,12 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{
-		"p00f/nvim-ts-rainbow",
-	},
+	-- {
+	-- 	"mrjones2014/nvim-ts-rainbow",
+	-- 	config = function()
+	-- 		require("nvim-treesitter.configs").setup()
+	-- 	end,
+	-- },
 	{
 		"f-person/git-blame.nvim",
 		event = "BufRead",

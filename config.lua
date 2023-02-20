@@ -2,7 +2,7 @@
 lvim.log.level = "warn"
 vim.opt.relativenumber = true
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-night"
 
 reload("user.plugins")
 reload("user.map")
