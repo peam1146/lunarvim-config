@@ -1,6 +1,34 @@
 -- Additional Plugins
 lvim.plugins = {
 	{
+		"echasnovski/mini.map",
+		branch = "stable",
+		config = function()
+			require("mini.map").setup()
+			local map = require("mini.map")
+			map.setup({
+				integrations = {
+					map.gen_integration.builtin_search(),
+					map.gen_integration.diagnostic({
+						error = "DiagnosticFloatingError",
+						warn = "DiagnosticFloatingWarn",
+						info = "DiagnosticFloatingInfo",
+						hint = "DiagnosticFloatingHint",
+					}),
+				},
+				symbols = {
+					encode = map.gen_encode_symbols.dot("3x2"),
+				},
+				window = {
+					side = "right",
+					width = 8, -- set to 1 for a pure scrollbar :)
+					winblend = 10,
+					show_integration_count = false,
+				},
+			})
+		end,
+	},
+	{
 		"pwntester/octo.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
