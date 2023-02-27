@@ -1,6 +1,14 @@
 -- Additional Plugins
 lvim.plugins = {
 	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({
+				debounce_delay = 500,
+			})
+		end,
+	},
+	{
 		"echasnovski/mini.map",
 		branch = "stable",
 		config = function()
@@ -222,8 +230,13 @@ lvim.plugins = {
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
-		config = function()
-			require("lsp_signature").on_attach()
+		config = function(client, bufnr)
+			require("lsp_signature").on_attach({
+				bind = true, -- This is mandatory, otherwise border config won't get registered.
+				handler_opts = {
+					border = "rounded",
+				},
+			}, bufnr)
 		end,
 	},
 	"simrat39/rust-tools.nvim",

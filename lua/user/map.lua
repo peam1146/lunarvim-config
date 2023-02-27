@@ -16,6 +16,7 @@ lvim.keys.normal_mode["<S-k>"] = ":lua vim.lsp.buf.hover()<cr>"
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["`"] = { "<cmd>ToggleTerm<CR>", "Terminal" }
+lvim.builtin.which_key.mappings["w"] = { "<cmd>lua require('lvim.lsp.utils').format()<CR>", "Format document" }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
