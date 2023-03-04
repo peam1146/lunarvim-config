@@ -27,7 +27,7 @@ reload("user.lab")
 reload("user.dial")
 reload("user.zen-mode")
 reload("user.inlay-hints")
-reload("user.plugins-config")
+--reload("user.plugins-config")
 
 -- Automatically install missing parsers when entering buffer
 
