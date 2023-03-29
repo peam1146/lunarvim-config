@@ -10,23 +10,28 @@ vim.opt.relativenumber = true
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
-	enabled = false,
-	pattern = "*.lua",
-	timeout = 1000,
+  enabled = false,
+  pattern = "*.lua",
+  timeout = 1000,
 }
 
-reload("user.plugins")
+
 reload("user.map")
-reload("user.terminal")
-reload("user.nvimtree")
 reload("user.treesitter")
+reload("user.nvimtree")
 reload("user.alpha")
 reload("user.lsp")
+reload("user.terminal")
+
+reload("user.plugins")
+
+-- Plugins config
 reload("user.fidget")
 reload("user.lab")
 reload("user.dial")
 reload("user.zen-mode")
 reload("user.inlay-hints")
+reload("user.project")
 --reload("user.plugins-config")
 
 -- Automatically install missing parsers when entering buffer
