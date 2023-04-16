@@ -37,3 +37,11 @@ lvim.builtin.which_key.mappings["r"] = {
   F = { "<cmd>CRFiletype<CR>", "Open json with supported files" },
   P = { "<cmd>CRProjects<CR>", "Open json with list of projects" },
 }
+
+lvim.builtin.which_key.mappings["G"] = {
+  name = "Gitsign",
+  s = { "<cmd>Gitsigns toggle_signs<CR>", "Toggle signs" },
+  n = { "<cmd>Gitsigns toggle_numhl<CR>", "Toggle numhl" },
+  l = { "<cmd>Gitsigns toggle_linehl<CR>", "Toggle linehl" },
+  w = { "<cmd>Gitsigns toggle_word_diff<CR>", "Toggle word_diff" },
+}

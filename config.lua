@@ -15,15 +15,13 @@ lvim.format_on_save = {
   timeout = 1000,
 }
 
-
+reload("user.plugins")
 reload("user.map")
 reload("user.treesitter")
 reload("user.nvimtree")
 reload("user.alpha")
 reload("user.lsp")
 reload("user.terminal")
-
-reload("user.plugins")
 
 -- Plugins config
 reload("user.fidget")
@@ -32,6 +30,8 @@ reload("user.dial")
 reload("user.zen-mode")
 reload("user.inlay-hints")
 reload("user.project")
+reload("user.cmp")
+
 --reload("user.plugins-config")
 
 -- Automatically install missing parsers when entering buffer
